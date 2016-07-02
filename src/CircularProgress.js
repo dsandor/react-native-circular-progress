@@ -32,12 +32,12 @@ export default class CircularProgress extends React.Component {
   }
 
   render() {
-    const { size, width, tintColor, backgroundColor, style, rotation, children, markerColor, markerLength } = this.props;
+    const { size, width, tintColor, backgroundColor, style, rotation, children, goalColor, goalValue } = this.props;
     const backgroundPath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, 360);
 
     const fill = this.extractFill(this.props.fill);
-    const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, 360 * (fill - markerLength) / 100);
-    const markerPath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, 360 * fill / 100);
+    const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, 360 * fill / 100);
+    const goalPath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, 360 * goalValue / 100);
 
     return (
       <View style={style}>
@@ -52,8 +52,8 @@ export default class CircularProgress extends React.Component {
                    stroke={tintColor}
                    strokeWidth={width}
                    strokeCap="butt"/>
-           <Shape d={markerPath}
-                  stroke={markerColor}
+           <Shape d={goalPath}
+                  stroke={goalColor}
                   strokeWidth={width}
                   strokeCap="butt"/>
           </Group>
@@ -75,14 +75,14 @@ CircularProgress.propTypes = {
   backgroundColor: PropTypes.string,
   rotation: PropTypes.number,
   children: PropTypes.func,
-  markerColor: PropTypes.string,
-  markerLength: PropTypes.number
+  goalColor: PropTypes.string,
+  goalValue: PropTypes.number
 }
 
 CircularProgress.defaultProps = {
   tintColor: 'black',
   backgroundColor: '#e4e4e4',
   rotation: 90,
-  makrerLength: 0,
-  markerColor: '#d00c0c'
+  goalValue: 0,
+  goalColor: '#d00c0c'
 }
