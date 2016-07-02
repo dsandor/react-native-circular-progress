@@ -56,7 +56,9 @@ class ProgressChart extends React.Component {
           width={3}
           fill={fill}
           tintColor="#00e0ff"
-          backgroundColor="#3d5875">
+          backgroundColor="#3d5875"
+          goalValue={95}
+          >
           {
             (fill) => (
               <Text style={styles.points}>
