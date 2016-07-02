@@ -1,6 +1,6 @@
 {
   "name": "ProgressChart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh"
@@ -8,6 +8,6 @@
   "dependencies": {
     "art": "^0.10.0",
     "react-native": "^0.20.0",
-    "react-native-circular-progress": "latest"
+    "react-native-circular-progress": "git+https://git@github.com/dsandor/react-native-circular-progress.git"
   }
 }
