@@ -48,14 +48,14 @@ export default class CircularProgress extends React.Component {
             <Shape d={backgroundPath}
                    stroke={backgroundColor}
                    strokeWidth={width}/>
-            <Shape d={circlePath}
+           <Shape d={goalPath}
+                   stroke={goalColor}
+                   strokeWidth={width}
+                   strokeCap="butt"/>
+           <Shape d={circlePath}
                    stroke={tintColor}
                    strokeWidth={width}
                    strokeCap="butt"/>
-           <Shape d={goalPath}
-                  stroke={goalColor}
-                  strokeWidth={width}
-                  strokeCap="butt"/>
           </Group>
         </Surface>
         {
